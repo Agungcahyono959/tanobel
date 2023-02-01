@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<title>mesin penghitung cleo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.center {
+
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+.button {
+
+  border: none;
+  color: white;
+  padding: 20px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 50%;}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+</style>
+<body>
+
+    <div class="w3-row w3-card " style="margin: 5px;padding: 5px; ">
+        <div class="w3-third w3-container ">
+            <img src="tanobel-logo-w300 (1).png" width="100"  alt="" class="button button3 w3-card">
+        </div>
+        <div class="w3-third w3-container  ">
+            <h2> Counter Mesin Baixin</h2>
+        </div>
+        <div class="w3-third w3-container ">
+        </div>
+      </div>
+
+
+      <div class="w3-row" style="margin: 40px;padding: 10px;">
+        <div class="w3-half w3-container w3-card center"  >
+          <p>Preform</p>
+          <button class="button button5 w3-card w3-teal " style="margin: 20px;padding: 5%;"><p id="inp1"></p></button>
+        </div>
+        <div class="w3-half w3-container w3-card center" >
+          <p>Botol</p>
+          <button class="button button5 w3-card w3-green" style="margin: 20px;padding: 5%;"><p id="inp2"></p></button>
+
+        </div>
+      </div>
+
+      <div class="w3-row " style="margin: 90px;padding: 5px; ">
+       
+      
+      </div>
+      <div class="w3-row w3-card " style="margin: 5px;padding: 5px; ">
+        <div class="w3-third w3-container  ">
+           <p>footer</p>
+        </div>
+      
+      </div>
+<script src="fire.js"></script>
+<script>
+var config = {
+  apiKey: "AIzaSyCS5-NG4nJnu7isB5fwyGfkKEG8VnrhSmo",
+  authDomain: "tanobelkediri-3a098.firebaseapp.com",
+  databaseURL: "https://tanobelkediri-3a098-default-rtdb.firebaseio.com",
+  projectId: "tanobelkediri-3a098",
+  storageBucket: "tanobelkediri-3a098.appspot.com",
+  messagingSenderId: "715312353221",
+  appId: "1:715312353221:web:230b46de2cf8d5c85145ac",
+  measurementId: "G-N89P11HTVM"
+  };
+
+  firebase.initializeApp(config);
+  var db = firebase.database();
+  var datain1 = db.ref("/Botol");
+  var datain2 = db.ref("/Preform");
+  datain1.on("value", function(snapshot) {document.getElementById("inp1").innerHTML= snapshot.val();});
+  datain2.on("value", function(snapshot) {document.getElementById("inp2").innerHTML= snapshot.val();});
+</script>
+
+</body>
+</html>
